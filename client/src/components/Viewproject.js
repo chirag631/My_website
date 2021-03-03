@@ -102,7 +102,30 @@ console.log(userid)
                    <Grid xs Items>
                  
           <Grid container justify="center">
+          {data1.length==0 && 
+        
+        <Grid item xl={2} lg={3} md={4} xs={12} sm={6} spacing={3} >
+        
+          <Card  >
+      
+      
+        
+
+        <CardContent>
+        
+        <Typography gutterBottom variant="h5" component="h2">
+        
+              Project Not Created
+          </Typography>
+           </CardContent>
+      
+        </Card>
+        
+        </Grid>
+        
+        }  
         <Grid container item xs={12} spacing={4} justify="flex-start">
+        
             {data1.map(FormRow)}
         </Grid>
       </Grid>

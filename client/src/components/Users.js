@@ -36,7 +36,7 @@ export default function Users(props) {
   const [data1,setdata]=useState([]);
   const {name}=useParams();
   console.log(props)
-
+  
   useEffect(() => {
     const loadUsers = async () => {
       const requestOptions = {
@@ -79,12 +79,14 @@ export default function Users(props) {
     );
   }
  
-  console.log(data1);
+  console.log(data1.length);
   return (
     <div>
     <Navbar />
     <div className={classes.root} >
-    <Typography className={classes.Typography}  variant="h4"  gutterBottom >PROJECT</Typography>  
+    <Typography className={classes.Typography}  variant="h4"  gutterBottom >PROJECT</Typography> 
+
+   {data1.length==0 && <Typography className={classes.Typography}  variant="h4"  gutterBottom >Project Not Created</Typography>}  
           <Grid container justify="center">
         <Grid container item xs={12} spacing={4} justify="flex-start">
             {data1.map(FormRow)}
