@@ -26,7 +26,9 @@ const useStyles = makeStyles((theme) => ({
   Typography:{
     color:"#fa7068"
   },
- 
+  color:{
+    color:'#ffff'
+  },
   margin:{
     marginBottom:theme.spacing(2)
   },
@@ -86,8 +88,20 @@ export default function Users(props) {
     <div className={classes.root} >
     <Typography className={classes.Typography}  variant="h4"  gutterBottom >PROJECT</Typography> 
 
-   {data1.length==0 && <Typography className={classes.Typography}  variant="h4"  gutterBottom >Project Not Created</Typography>}  
-          <Grid container justify="center">
+     
+   
+          <Grid container justify="center">{data1.length==0 && 
+    <Grid item xl={2} lg={3} md={4} xs={12} sm={6} spacing={3} >
+      <Card  >
+    <CardContent>
+    <Typography gutterBottom variant="h5" component="h2">
+          Project Not Created
+      </Typography>
+       </CardContent>
+    </Card>
+    </Grid>
+    
+    }
         <Grid container item xs={12} spacing={4} justify="flex-start">
             {data1.map(FormRow)}
         </Grid>

@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
   root1:{
       marginTop:150,
-      marginLeft:150,
+      marginLeft:0,
     },
   media: { 
     height:200,
@@ -182,7 +182,7 @@ console.log(abcd);
       
     </Grid>
 
-    <Grid item xs={10} xl={2} lg={3} md={4} sm={10}  >
+    <Grid item xs={12} xl={2} lg={3} md={4} sm={12}  >
       <Card  className={classes.root} >
         <CardContent>
             <Typography gutterBottom variant="h5"className={classes.Typography} component="h1">
