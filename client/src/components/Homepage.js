@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         textAlign:'center',
-        color:'#ffffff',
+        color:'#fa6f67',
         marginTop:20
       },
       margin:{

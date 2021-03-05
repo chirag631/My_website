@@ -3,13 +3,23 @@ import {Link} from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Navbar from './Navbar';
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#fa6f67',
+      contrastText: '#fff',
+    },
+    
+  },
+});
 const useStyles = makeStyles((theme) => ({
     root: {
         textAlign:'center',
-        color:'#ffffff',
+        color:'#fa6f67',
       },
       color:{
-        color:"#000",
+        color:"#fff",
         textDecoration:'none'
       },
   }));
@@ -25,10 +35,12 @@ sessionStorage.removeItem("username");
       <div>
       <Navbar/>
        <div className={classes.root}>
+       <ThemeProvider theme={theme}>
         <h1>Logout Successfully</h1>
-        <Button variant="contained"  >
+        <Button variant="contained"color="primary"  >
             <Link className={classes.color} to="/login">Login Again</Link>                    
         </Button>
+        </ThemeProvider>
       </div> 
       </div>
     )

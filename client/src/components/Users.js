@@ -67,7 +67,7 @@ export default function Users(props) {
       <img className={classes.media} src={`https://myuserbucket35.s3.us-east-2.amazonaws.com/uploads/${card.image}`} />
         <CardContent>
         
-        <Typography gutterBottom variant="h5" component="h2">
+        <Typography gutterBottom className={classes.Typography} variant="h5" component="h2">
         
               {card.title}
           </Typography>
@@ -94,7 +94,7 @@ export default function Users(props) {
     <Grid item xl={2} lg={3} md={4} xs={12} sm={6} spacing={3} >
       <Card  >
     <CardContent>
-    <Typography gutterBottom variant="h5" component="h2">
+    <Typography gutterBottom className={classes.Typography} variant="h5" component="h2">
           Project Not Created
       </Typography>
        </CardContent>

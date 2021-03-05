@@ -10,7 +10,7 @@ const useStyles = makeStyles({
     minHeight:350
   },
     color:{
-      color:"#000",
+      color:"#fa6f67",
     },
   media: {
     height:250,

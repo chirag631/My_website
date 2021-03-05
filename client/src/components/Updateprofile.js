@@ -15,7 +15,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#192d3e',
+      main: '#fa6f67',
       contrastText: '#fff',
     },
     
@@ -24,17 +24,19 @@ const theme = createMuiTheme({
 const useStyles = makeStyles((theme) => ({
   root: {
     marginTop:20,
-    
     textAlign:'center',
   },
   
   media: { 
     borderRadius: '5%',
       height:350,
+      width:"100%"
+
   }, 
   Typography:{
     marginTop:50,
     marginBottom:30,
+    color:"#fa6f67"
   }, 
   margin: {
       marginRight: theme.spacing(1),

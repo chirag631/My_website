@@ -24,6 +24,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   color:{
+    color:"#fa6f67",
+    textDecoration:'none'
+  },
+  logo:{
     color:"#000",
     textDecoration:'none'
   },
@@ -121,7 +125,7 @@ export default function Navbar() {
 
       <img src={haviicon} alt="pic"  height="30" width='30' />
             <Typography className={classes.title} variant="h6" noWrap>
-            <Link to="/"className={classes.color}> HAVI</Link>
+            <Link to="/"className={classes.logo}> HAVI</Link>
           </Typography>
           
           <div className={classes.grow} />

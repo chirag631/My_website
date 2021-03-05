@@ -15,10 +15,11 @@ import Checkbox from '@material-ui/core/Checkbox';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import Navbar from './Navbar';
 
+
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#192d3e',
+      main: '#fa6f67',
       contrastText: '#fff',
     },
     
@@ -32,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
   root1:{
     marginTop:150,
-    marginLeft:0,
+    marginLeft:150
   },
   media: { 
     height:200,
@@ -42,10 +43,8 @@ const useStyles = makeStyles((theme) => ({
     marginTop:100,
     marginBottom:30,
   },
+ 
   Typography1:{
-      color:'#fff'
-  },
-  Typography2:{
     marginTop:10,
     marginBottom:10
 
@@ -55,14 +54,18 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
      
     },
-    
+  },
+  margin1:{
+    marginBottom:20
   },
   button:{ 
     minWidth:200,
     marginTop:5,
     marginBottom:5,
-    
   },
+  color:{
+    color:"#fa6f67"
+  }
     
 }));
 
@@ -154,21 +157,18 @@ console.log(confirmPassword)
                 <div className={classes.root1} >
                  <CardMedia
           className={classes.media}
-          image="https://myuserbucket35.s3.us-east-2.amazonaws.com/public/fuse.svg"
-          title="Contemplative Reptile"
+          image="https://myuserbucket35.s3.us-east-2.amazonaws.com/public/havi.png"
+          title="HAVI"
         />
         <CardContent >
-          <Typography gutterBottom className={classes.Typography1} variant="h2" component="h2">
-            Welcome to the
+          <Typography gutterBottom  variant="h2" component="h2">
+            WE ARE HAVI
             
           </Typography>
-          <Typography gutterBottom  className={classes.Typography1} variant="h2" component="h2">
-            
-            FUSE React! 
-          </Typography>
-          <Typography gutterBottom  className={classes.Typography1} variant="h6" component="h2">
           
-          Powerful and professional admin template for Web Applications, CRM, CMS, Admin Panels and more.
+          <Typography gutterBottom   variant="h3" component="h2">
+          
+          We Make IoT & Robotics Kit that fasters active learning
           </Typography>
         </CardContent>
       </div>
@@ -180,6 +180,7 @@ console.log(confirmPassword)
       <Card  className={classes.root}>
       
         <CardContent>
+        <ThemeProvider theme={theme}>
             <Typography gutterBottom variant="h5"className={classes.Typography} component="h1">
                Create an account
             </Typography>
@@ -231,7 +232,7 @@ console.log(confirmPassword)
           fullWidth
           variant="outlined"
         />
-      
+       
       
         <FormGroup >
       
@@ -240,7 +241,7 @@ console.log(confirmPassword)
             label={<Typography variant="caption" color="textSecondary">I read and accept terms and conditions</Typography>}
           />
       </FormGroup>
-      <ThemeProvider theme={theme}>
+    
     
           <Button 
           type="submit"  color="primary"
@@ -251,24 +252,21 @@ console.log(confirmPassword)
           >
         Create an account
       </Button>
-      </ThemeProvider>
+      
       </form>
     
-    Already have an account?
+    
           
-    <Typography className={classes.Typography2} >
-          <Link to="/login">
+    <Typography color="primary" >
+    Already have an account?
+        </Typography>
+
+    <Typography color="primary" >
+          <Link to="/login" className={classes.color}>
             Login
           </Link>  
           </Typography>
-          <Typography className={classes.Typography2} >
-           OR 
-        </Typography>
-        <Typography className={classes.Typography2} >
-          <Link to="/">
-             Home
-          </Link>
-        </Typography>
+          </ThemeProvider>   
         </CardContent>
       </Card>
    </Grid>

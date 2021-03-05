@@ -18,13 +18,10 @@ import Navbar from './Navbar';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#192d3e',
+      main: '#fa6f67',
       contrastText: '#fff',
     },
-    secondary:{
-      main: '#61dafb',
-      contrastText: '#000',
-    }
+    
     
   },
 });
@@ -36,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
   root1:{
       marginTop:150,
-      marginLeft:0,
+      marginLeft:150,
     },
   media: { 
     height:200,
@@ -46,19 +43,24 @@ const useStyles = makeStyles((theme) => ({
     marginTop:100,
     marginBottom:30,
   },
+  
   Typography1:{
-      color:'#fff'
-  },
-  Typography2:{
     marginTop:10,
     marginBottom:10
 
+  },
+  color:{
+    color:"#fa7068"
   },
   margin: {
     '& > *': {
       margin: theme.spacing(1),
     },
   },
+  margin1:{
+    marginBottom:20
+  },
+
     button:{
       minWidth:200,
       marginTop:5,
@@ -158,24 +160,21 @@ console.log(abcd);
         <Grid container item xs={12} justify="center">
         
         <Grid item xs >
-                <div className={classes.root1}>
+        <div className={classes.root1} >
                  <CardMedia
           className={classes.media}
-          image="https://myuserbucket35.s3.us-east-2.amazonaws.com/public/fuse.svg"
-          title="Contemplative Reptile"
+          image="https://myuserbucket35.s3.us-east-2.amazonaws.com/public/havi.png"
+          title="HAVI"
         />
         <CardContent >
-          <Typography gutterBottom className={classes.Typography1} variant="h2" component="h2">
-            Welcome to the
+          <Typography gutterBottom  variant="h2" component="h2">
+            WE ARE HAVI
             
           </Typography>
-          <Typography gutterBottom  className={classes.Typography1} variant="h2" component="h2">
-            
-            FUSE React! 
-          </Typography>
-          <Typography gutterBottom  className={classes.Typography1} variant="h6" component="h2">
           
-          Powerful and professional admin template for Web Applications, CRM, CMS, Admin Panels and more.
+          <Typography gutterBottom   variant="h3" component="h2">
+          
+          We Make IoT & Robotics Kit that fasters active learning
           </Typography>
         </CardContent>
       </div>
@@ -211,7 +210,7 @@ console.log(abcd);
           fullWidth
           variant="outlined"
         />
-        
+      <ThemeProvider theme={theme}>    
         <FormGroup >
       
       <FormControlLabel
@@ -220,7 +219,7 @@ console.log(abcd);
         />
     </FormGroup>
 
-      <ThemeProvider theme={theme}>
+    
           <Button 
           type="submit"  color="primary"
           className={classes.button} variant="contained" 
@@ -232,41 +231,34 @@ console.log(abcd);
       </ThemeProvider>
       </form>
 
-      <Typography className={classes.Typography2} >
+      <Typography className={classes.Typography1} >
       <Divider /> OR<Divider />
         </Typography>
         <ThemeProvider theme={theme}>
           <div>
-        <Button color="secondary"
+        <Button color="primary"
           className={classes.button} variant="contained" 
           >
         Login with Google
       </Button></div>
-      <div>
+      <div className={classes.margin1}>
       <Button color="primary"
           className={classes.button} variant="contained" 
           >
         Login With Facebook
       </Button>
       </div>
-      </ThemeProvider>
-      <Typography className={classes.Typography2} >
-      Create an account?
+      
+      <Typography color="primary" >
+      Don't Have an account? 
         </Typography>
-      <Typography className={classes.Typography2} >
-          <Link to="/Signup">
-            Signup
+      
+      <Typography color="primary" >
+          <Link to="/Signup" className={classes.color}>
+            Create an account
           </Link>  
           </Typography>
-          <Typography className={classes.Typography2} >
-              OR
-        </Typography>
-           
-        <Typography className={classes.Typography2} >
-          <Link to="/">
-             Home
-          </Link>
-        </Typography>
+          </ThemeProvider>
         </CardContent>
           </Card>
       

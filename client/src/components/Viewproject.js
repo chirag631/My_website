@@ -8,6 +8,16 @@ import Typography from '@material-ui/core/Typography';
 import {Redirect} from 'react-router-dom'
 import Navbaruser from './Navbaruser'
 import Sidebar from './Sidebar';
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#fa6f67',
+      contrastText: '#fff',
+    },
+    
+  },
+});
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -68,18 +78,20 @@ console.log(userid)
           <Grid item xl={2} lg={3} md={4} xs={12} sm={6} spacing={3} >
         
           <Card  className={classes.root1}>
+          <ThemeProvider theme={theme}>
       <CardActionArea>
       
         <img className={classes.media} src={`https://myuserbucket35.s3.us-east-2.amazonaws.com/uploads/${card.image}`}/>
 
         <CardContent>
         
-        <Typography gutterBottom variant="h5" component="h2">
+        <Typography gutterBottom color="primary" variant="h5" component="h2">
         
               {card.title}
           </Typography>
            </CardContent>
       </CardActionArea>
+      </ThemeProvider>
         </Card>
         
         </Grid>
@@ -93,6 +105,7 @@ console.log(userid)
       <div>
           <Navbaruser />
     <div className={classes.root} >
+    <ThemeProvider theme={theme}>
     <Grid container color="primary" justify="center" direction="row">
       <Grid xs={12} container Items justify="flex-start" >
         <Grid xs={5} sm={4} md={3} lg={2} xl={2} Items >
@@ -108,12 +121,9 @@ console.log(userid)
         
           <Card  >
       
-      
-        
-
         <CardContent>
         
-        <Typography gutterBottom variant="h5" component="h2">
+        <Typography gutterBottom color="primary" variant="h5" component="h2">
         
               Project Not Created
           </Typography>
@@ -131,7 +141,9 @@ console.log(userid)
       </Grid>
       </Grid>
       </Grid>
+  
       </Grid>
+      </ThemeProvider>
     </div>
     </div>
   );
