@@ -7,7 +7,7 @@ import Logout from './components/Logout'
 import Addproject from "./components/Addproject"
 import Updateprofile from './components/Updateprofile'
 import Viewproject from './components/Viewproject';
-
+import Footer from './components/Footer'
 
 import {
   BrowserRouter as Router,
@@ -46,6 +46,7 @@ function App() {
         <Route path="/:name" component={Users} />
       </Switch>
   </Router>
+  <Footer />
   </div>
    </ThemeProvider>
   );
