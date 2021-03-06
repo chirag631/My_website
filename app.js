@@ -283,14 +283,15 @@ app.post('/getprojectdata',async(req,res)=>{
     const name=req.body.name;
     try{
     const username=await Register.findOne({name:name});
-    
+    const image=username.image;
     const userid=username._id;
 
 
   RegisterProject.find({userid:userid})
   .then(result=>{
     res.status(200).json({
-      studentData:result
+      studentData:result,
+      image
     })
   })
 .catch(err=>{

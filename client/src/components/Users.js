@@ -24,6 +24,12 @@ const useStyles = makeStyles((theme) => ({
   media: {
     height:250,
     width:'100%'
+    
+  },
+  image:{
+    height:200,
+    width:'100%',
+    borderRadius:"50%"
   },
   Typography:{
     color:"#fa7068"
@@ -38,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Users(props) {
   const classes = useStyles();
   const [data1,setdata]=useState([]);
+  const [image,setimage]=useState('');
   const {name}=useParams();
   console.log(props)
   
@@ -50,7 +57,8 @@ export default function Users(props) {
     };
       const res= await fetch("/getprojectdata",requestOptions);
       const body=await res.json();
-      console.log(body)    
+      console.log(body)
+      setimage(body.image);    
       setdata(body.studentData);
     };
     loadUsers();
@@ -82,7 +90,7 @@ export default function Users(props) {
       </React.Fragment>
     );
   }
- 
+
   console.log(data1.length);
   return (
     <div>
@@ -90,21 +98,42 @@ export default function Users(props) {
     <div className={classes.root} >
     <Typography className={classes.Typography}  variant="h4"  gutterBottom >PROJECT</Typography> 
 
+    <Grid container justify="center">
      
-   
-          <Grid container justify="center">{data1.length==0 && 
+    
+    
+    
+        <Grid container item xs={12} spacing={4} justify="flex-start">
+      <Grid item xl={2} lg={3} md={4} xs={12} sm={6} spacing={3} >
+      
+      
+      <img className={classes.image} src={`https://myuserbucket35.s3.us-east-2.amazonaws.com/users/${image}`} />
+        <CardContent>
+        
+        <Typography gutterBottom  variant="h4" >
+        
+              {name}
+          </Typography>
+          <Typography gutterBottom  variant="h6" >
+        
+          Hello there! My name is {name}, I’m 20 years old. I love coding and this is a portfolio of my work.
+          </Typography>
+          
+           </CardContent>
+      
+    </Grid>
+    {data1.length==0 && 
     <Grid item xl={2} lg={3} md={4} xs={12} sm={6} spacing={3} >
       <Card  >
-    <CardContent>
-    <Typography gutterBottom className={classes.Typography} variant="h5" component="h2">
-          Project Not Created
-      </Typography>
-       </CardContent>
-    </Card>
+        <CardContent>
+        <Typography gutterBottom className={classes.Typography} variant="h5" component="h2">
+              Project Not Created
+          </Typography>
+          </CardContent>
+      </Card>
     </Grid>
     
     }
-        <Grid container item xs={12} spacing={4} justify="flex-start">
             {data1.map(FormRow)}
         </Grid>
       </Grid>

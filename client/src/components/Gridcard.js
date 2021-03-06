@@ -5,6 +5,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import {Link} from 'react-router-dom';
+
 const useStyles = makeStyles({
   root: {
     minHeight:350
@@ -23,6 +24,7 @@ const useStyles = makeStyles({
     marginTop:5,
     marginBottom:5
   },
+ 
 });
 
 export default function Gridcard(props) {
@@ -34,17 +36,14 @@ const {image}=props;
 
     <Card  className={classes.root}>
       <CardActionArea>
-        
+      <Link className={classes.color} to={{pathname:`/${name}`}}   >
       <img className={classes.media} src={`https://myuserbucket35.s3.us-east-2.amazonaws.com/users/${image}`}/>
         <CardContent>
-        
           <Typography gutterBottom variant="h5" component="h2">
-            <Link className={classes.color} to={{pathname:`/${name}`}}   >
                   {name}
-              </Link> 
           </Typography>
-      
         </CardContent>
+        </Link>
       </CardActionArea>
       
     </Card>
