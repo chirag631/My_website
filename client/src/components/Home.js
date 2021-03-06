@@ -10,7 +10,9 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
    justify:'center',
     textAlign:'center',
-    marginTop:20
+    marginTop:20,
+    marginLeft:150,
+    marginRight:150,
   },
   
   margin:{

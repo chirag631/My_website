@@ -30,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
     minWidth:300,
     textAlign:'center',
     borderRadius:'0px',
+    boxShadowTop: "none"
   },
   root1:{
       marginTop:150,
