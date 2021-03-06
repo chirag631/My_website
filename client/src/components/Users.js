@@ -73,7 +73,7 @@ export default function Users(props) {
           
             
           <Card  className={classes.root1}>
-      <CardActionArea>
+      
       <img className={classes.media} src={`https://myuserbucket35.s3.us-east-2.amazonaws.com/uploads/${card.image}`} />
         <CardContent>
         
@@ -82,7 +82,7 @@ export default function Users(props) {
               {card.title}
           </Typography>
            </CardContent>
-      </CardActionArea>
+      
         </Card>
         
         </Grid>
