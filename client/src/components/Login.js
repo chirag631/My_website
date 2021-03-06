@@ -29,8 +29,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     minWidth:300,
     textAlign:'center',
-    borderRadius:'0px',
-    boxShadowTop: "none"
+    borderRadius:'5px',
+    
+    marginTop:5
   },
   root1:{
       marginTop:150,
@@ -55,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
   },
   margin: {
     '& > *': {
-      margin: theme.spacing(1),
+      marginBottom: theme.spacing(1),
     },
   },
   margin1:{
