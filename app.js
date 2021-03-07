@@ -78,7 +78,8 @@ console.log(email)
                 name:username,
                 email:email,
                 password:password,
-                image:'defaultprofile.png'
+                image:'defaultprofile.png',
+                age:'20'
             });
             registerEmployee.save().then(doc=>{
               res.status(201).json({
@@ -117,7 +118,7 @@ app.post("/updateprofile", function(req,res,next){
     var email=req.body.email;
     var password=req.body.password;
     var _id=req.body.userid;
-       
+    var age=req.body.age;
     
     Register.findById(_id,function(err,data){
     if (!data){
@@ -127,7 +128,7 @@ app.post("/updateprofile", function(req,res,next){
       data.name=username,
     data.email=email,
     data.password=password,
-    
+    data.age=age,
   
     data.save().
       then(doc=>{
@@ -284,6 +285,7 @@ app.post('/getprojectdata',async(req,res)=>{
     try{
     const username=await Register.findOne({name:name});
     const image=username.image;
+    const age=username.age;
     const userid=username._id;
 
 
@@ -291,7 +293,8 @@ app.post('/getprojectdata',async(req,res)=>{
   .then(result=>{
     res.status(200).json({
       studentData:result,
-      image
+      image,
+      age
     })
   })
 .catch(err=>{

@@ -56,6 +56,7 @@ export default function Updateprofile() {
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [age, setAge] = React.useState('');
   const [progress, setProgress] = React.useState(0);
   const userid=sessionStorage.getItem("userid");
   const token=sessionStorage.getItem("token");
@@ -84,7 +85,7 @@ const onChange = e => {
     setImg(body.studentData[0].image);
     setEmail(body.studentData[0].email)
     setPassword(body.studentData[0].password)
-    
+    setAge(body.studentData[0].age)
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -96,7 +97,7 @@ const onChange = e => {
     formData.append('email',email)
     formData.append('password',password)
     formData.append('userid', userid);
-    
+    formData.append('age', age);
     console.log(formData);
     
     axios.post("/updateprofile",formData,{headers: {
@@ -128,7 +129,9 @@ const handleChangeEmail = (event) => {
   const handleChangePassword = (event) => {
     setPassword(event.target.value);
   };
-  
+  const handleChangeAge = (event) => {
+    setAge(event.target.value);
+  };
   const handleClose = () => {
     loadUsers();  
   };
@@ -191,7 +194,16 @@ const handleChangeEmail = (event) => {
                 fullWidth
                 variant="outlined"
                 />
-             
+                <TextField
+                className={classes.margin}
+                id="outlined-textarea"
+                label="Age"
+                name="age"
+                value={age}
+                onChange={handleChangeAge}
+                fullWidth
+                variant="outlined"
+                />
                 <TextField
                 id="outlined-required"
                 helperText="Change User Image"

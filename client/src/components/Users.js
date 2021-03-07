@@ -45,7 +45,9 @@ export default function Users(props) {
   const classes = useStyles();
   const [data1,setdata]=useState([]);
   const [image,setimage]=useState('');
+  const [age,setAge]=useState('');
   const {name}=useParams();
+
   console.log(props)
   
   useEffect(() => {
@@ -58,7 +60,8 @@ export default function Users(props) {
       const res= await fetch("/getprojectdata",requestOptions);
       const body=await res.json();
       console.log(body)
-      setimage(body.image);    
+      setimage(body.image); 
+      setAge(body.age);    
       setdata(body.studentData);
     };
     loadUsers();
@@ -116,7 +119,7 @@ export default function Users(props) {
           </Typography>
           <Typography gutterBottom  variant="h6" >
         
-          Hello there! My name is {name}, I’m 20 years old. I love coding and this is a portfolio of my work.
+          Hello there! My name is {name}, I’m {age} years old. I love coding and this is a portfolio of my work.
           </Typography>
           
            </CardContent>
